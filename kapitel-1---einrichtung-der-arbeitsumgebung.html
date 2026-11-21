@@ -1,0 +1,1012 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Ein Client-Server-Beispiel mit Flutter/NestJS">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/de-flutter-nestjs-sept-2026/kapitel-1---einrichtung-der-arbeitsumgebung.html">
+      
+      
+        <link rel="prev" href="einleitung.html">
+      
+      
+        <link rel="next" href="kapitel-2---installation-des-nestjs-servers.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>2. Kapitel 1 - Einrichtung der Arbeitsumgebung - Ein Client-Server-Beispiel mit Flutter/NestJS</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Ein Client-Server-Beispiel mit Flutter/NestJS";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-kapitel-1-einrichtung-der-arbeitsumgebung" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Ein Client-Server-Beispiel mit Flutter/NestJS" class="md-header__button md-logo" aria-label="Ein Client-Server-Beispiel mit Flutter/NestJS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ein Client-Server-Beispiel mit Flutter/NestJS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. Kapitel 1 - Einrichtung der Arbeitsumgebung
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Zum dunklen Modus wechseln"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Zum dunklen Modus wechseln" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Zum hellen Modus wechseln"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Zum hellen Modus wechseln" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/de-flutter-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Ein Client-Server-Beispiel mit Flutter/NestJS" class="md-nav__button md-logo" aria-label="Ein Client-Server-Beispiel mit Flutter/NestJS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Ein Client-Server-Beispiel mit Flutter/NestJS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/de-flutter-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Willkommen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="einleitung.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Einleitung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Kapitel 1 - Einrichtung der Arbeitsumgebung
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="kapitel-1---einrichtung-der-arbeitsumgebung.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Kapitel 1 - Einrichtung der Arbeitsumgebung
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-die-werkzeuge-installieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Die Werkzeuge installieren
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1. Die Werkzeuge installieren">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-den-flutter-client-installieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.1. Den Flutter-Client installieren
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-android-studio-und-android-befehlszeilenwerkzeuge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.2. Android Studio und Android-Befehlszeilenwerkzeuge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213-einen-android-emulator-erstellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.3. Einen Android-Emulator erstellen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#214-das-android-smartphone-vorbereiten" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.4. Das Android-Smartphone vorbereiten
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kapitel-2---installation-des-nestjs-servers.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Kapitel 2 - Installation des [NestJS]-Servers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kapitel-3---einfuhrung-in-flutter.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Kapitel 3 - Einführung in Flutter
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kapitel-4---der-flutter-client-fur-die-anwendung-rdvmedecins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Kapitel 4 - Der Flutter-Client für die Anwendung RdvMedecins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kapitel-5---portierung-der-flutter-anwendung-auf-mobilgerate-desktop-und-web.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Kapitel 5 - Portierung der Flutter-Anwendung auf Mobilgeräte, Desktop und Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="kapitel-6---fazit-und-nachste-schritte.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Kapitel 6 - Fazit und nächste Schritte
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><span id="chapitre-1-mise-en-place-de-lenvironnement-de-travail" name="chapitre-1-mise-en-place-de-lenvironnement-de-travail" class="odt-bookmark-anchor"></span></p>
+<h1 id="2-kapitel-1-einrichtung-der-arbeitsumgebung">2. <span style="color: #2e74b5">Kapitel 1 - Einrichtung der Arbeitsumgebung</span></h1>
+<p><span id="installer-les-outils" name="installer-les-outils" class="odt-bookmark-anchor"></span></p>
+<h2 id="21-die-werkzeuge-installieren">2.1. <span style="color: #2e74b5">Die Werkzeuge installieren</span></h2>
+<ol>
+  <li><b>Node.js</b>: Laden Sie Version 22 (oder höher) von <a href="https://nodejs.org/"><u><span style="color: #0563c1">nodejs.org</span></u></a> herunter und installieren Sie sie. Überprüfen Sie die Installation in einem Terminal:
+
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>node --version
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>npm --version
+</code></pre></div></td></tr></table></div>
+
+  </li>
+</ol>
+
+<ol>
+  <li><b>Visual Studio Code </b>(VSCode): kostenlos erhältlich unter <a href="https://code.visualstudio.com/"><u><span style="color: #0563c1">code.visualstudio.com</span></u></a>. Installieren Sie die Erweiterung „TypeScript and JavaScript Language Features“ (in der Regel bereits enthalten).
+  </li>
+</ol>
+
+<ol>
+  <li><b>[MySQL] 8</b>: Installieren Sie es zum Beispiel über <a href="https://www.apachefriends.org/"><u><span style="color: #0563c1">XAMPP</span></u></a>, <a href="https://laragon.org/"><u><span style="color: #0563c1">Laragon</span></u></a> (unter Windows) oder direkt über <a href="https://dev.mysql.com/downloads/mysql/"><u><span style="color: #0563c1">[MySQL] Community Server</span></u></a>. Ein grafisches Verwaltungswerkzeug (phpMyAdmin, <i>[MySQL] </i>Workbench, DBeaver, HeidiSQL …) erleichtert die Arbeit. Im weiteren Verlauf wird das Werkzeug Laragon verwendet.
+  </li>
+  <li><b>Postman</b>: kostenlos erhältlich unter <a href="https://www.postman.com/downloads/"><u><span style="color: #0563c1">postman.com</span></u></a>.
+  </li>
+</ol>
+
+<h3 id="211-den-flutter-client-installieren">2.1.1. <span style="color: #1f4d78">Den Flutter-Client installieren</span></h3>
+<p>Starten Sie VSCode, ohne ein Projekt auszuwählen:</p>
+<p><img src="images/1000000000000299000000BE1659BF59.png" width="333" height="95" style="width:8.798cm;height:2.514cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000299000000BE1659BF59.png" /></p>
+<ul>
+  <li>Öffnen Sie in [1-2] die Befehlspalette;
+  </li>
+</ul>
+
+<p><img src="images/10000000000001C200000091697A7090.png" width="225" height="73" style="width:5.953cm;height:1.919cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C200000091697A7090.png" /></p>
+<ul>
+  <li>Erstellen Sie in [3] ein neues Flutter-Projekt;
+  </li>
+</ul>
+
+<p><img src="images/1000000000000524000001B6A25B6123.png" width="602" height="200" style="width:15.921cm;height:5.299cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000524000001B6A25B6123.png" /></p>
+<ul>
+  <li>Erstellen Sie in [4] eine leere App;
+  </li>
+</ul>
+
+<p><img src="images/1000000000000567000001A3ADEBE84C.png" width="602" height="182" style="width:15.921cm;height:4.822cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000567000001A3ADEBE84C.png" /></p>
+<ul>
+  <li>Geben Sie in [5-6] einen Ordner an, in dem der Projektunterordner angelegt wird;
+  </li>
+</ul>
+
+<p><img src="images/100000000000033B000000E9893CB218.png" width="414" height="117" style="width:10.941cm;height:3.083cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000033B000000E9893CB218.png" /></p>
+<ul>
+  <li>Geben Sie in [6] einen Namen für das Projekt ein. Dies ist auch der Name des für das Projekt angelegten Ordners;
+  </li>
+</ul>
+
+<p><img src="images/10000000000004BE000001EA71832475.png" width="602" height="243" style="width:15.921cm;height:6.426cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004BE000001EA71832475.png" /></p>
+<ul>
+  <li>Legen Sie in [1-3] die Ziele des Projekts fest: [1 – Android application, 2 – desktop application, 3 – web application];
+  </li>
+</ul>
+
+<p><img src="images/1000000000000231000003007D8C16C6.png" width="281" height="384" style="width:7.422cm;height:10.16cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000231000003007D8C16C6.png" /></p>
+<ul>
+  <li>In [4] sehen Sie das erstellte Projekt. VSCode lädt das Flutter SDK automatisch herunter;
+  </li>
+</ul>
+
+<p>Wenn Sie den Code dieses Dokuments heruntergeladen haben, befindet er sich in zwei Ordnern:</p>
+<p><img src="images/10000000000001B800000195C36311C3.png" width="220" height="203" style="width:5.821cm;height:5.359cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B800000195C36311C3.png" /></p>
+<p><img src="images/10000000000001CB000000E0CCF800EC.png" width="224" height="110" style="width:5.93cm;height:2.9cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CB000000E0CCF800EC.png" /></p>
+<ul>
+  <li>in [1] der Client <i>[Flutter]</i>;
+  </li>
+  <li>in [2] der <i>[NestJS]</i>-Server;
+  </li>
+  <li>in [3] der Inhalt von [2]. Kopieren Sie diesen gesamten Inhalt in den Ordner Ihres Flutter-Projekts. In Ihrem Projekt erscheinen neue Elemente:
+  </li>
+</ul>
+
+<p><img src="images/100000000000014D000002C7BE522812.png" width="167" height="356" style="width:4.406cm;height:9.407cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000014D000002C7BE522812.png" /></p>
+<p>Der Befehl <strong><em>[flutter doctor]</em></strong> prüft Ziel für Ziel, ob alles vorhanden ist, was <em>[Flutter]</em> benötigt. Führen Sie ihn in einem Terminal innerhalb des Flutter-Projekts aus:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>flutter doctor
+</code></pre></div></td></tr></table></div>
+<p>Wenn alles in Ordnung ist, erhalten Sie ein Ergebnis wie das folgende (die Versionsnummern können abweichen):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>PS C:\Data\st-2026\dev\flutter-nestjs-sept-2026\flutter_application_1&gt; flutter doctor
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>Doctor summary (to see all details, run flutter doctor -v):
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>[√] Flutter (Channel stable, 3.44.9, on Microsoft Windows [version 10.0.26200.9457], locale fr-FR)
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>[√] Windows Version (Windows 11 or higher, 25H2, 2009)
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>[√] Android toolchain - develop for Android devices (Android SDK version 37.0.0)
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>[√] Chrome - develop for the web
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>[√] Visual Studio - develop Windows apps (Visual Studio Build Tools 2026 18.9.0)
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>[√] Connected device (3 available)
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>[√] Network resources
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>• No issues found!
+</code></pre></div></td></tr></table></div>
+<p>Jede Zeile beginnt mit einem Symbol: <em>[√]</em> (alles in Ordnung), <em>[!]</em> (Warnung: Ein Element fehlt, was die Funktion des Codes nicht unbedingt beeinträchtigt) oder <em>[X]</em> (Fehler). Für diesen Kurs sind die Zeilen <em>[Flutter]</em>, <em>[Android toolchain] (Kompilierung für ein [Android]-Smartphone) und [Connected device]</em> (mindestens ein erkanntes Gerät, konkret das Smartphone) relevant. Die Zeilen <em>[Chrome]</em> (Webziel) und <em>[Visual Studio]</em> (Windows-Ziel) betreffen nur diese Ziele: Ein <em>[!]</em> oder <em>[X]</em> bei einem Ziel, das Sie nicht verwenden, können Sie ignorieren.</p>
+<p>Wenn <em>[Android toolchain]</em> die Meldung „cmdline-tools component is missing“ ausgibt, installieren Sie die <em>[Android SDK Command-line Tools]</em> (siehe unten); bei der Meldung „Android license status unknown“ akzeptieren Sie die Lizenzen (Schritt 5). Der Befehl <strong><em>[flutter doctor -v]</em></strong> liefert Details zu jeder Prüfung.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span>
+<span class="normal"><a href="#__codelineno-3-27">27</a></span>
+<span class="normal"><a href="#__codelineno-3-28">28</a></span>
+<span class="normal"><a href="#__codelineno-3-29">29</a></span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span>
+<span class="normal"><a href="#__codelineno-3-31">31</a></span>
+<span class="normal"><a href="#__codelineno-3-32">32</a></span>
+<span class="normal"><a href="#__codelineno-3-33">33</a></span>
+<span class="normal"><a href="#__codelineno-3-34">34</a></span>
+<span class="normal"><a href="#__codelineno-3-35">35</a></span>
+<span class="normal"><a href="#__codelineno-3-36">36</a></span>
+<span class="normal"><a href="#__codelineno-3-37">37</a></span>
+<span class="normal"><a href="#__codelineno-3-38">38</a></span>
+<span class="normal"><a href="#__codelineno-3-39">39</a></span>
+<span class="normal"><a href="#__codelineno-3-40">40</a></span>
+<span class="normal"><a href="#__codelineno-3-41">41</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>PS C:\Data\st-2026\dev\flutter-nestjs-sept-2026\flutter_application_1&gt; flutter doctor -v
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>[√] Flutter (Channel stable, 3.44.9, on Microsoft Windows [version 10.0.26200.9457], locale fr-FR) [305ms]
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>    • Flutter version 3.44.9 on channel stable at C:\Users\serge\flutter
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>    • Upstream repository https://github.com/flutter/flutter.git
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>    • Framework revision 6b182d2c75 (7 weeks ago), 2026-08-05 10:04:07 -0700
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>    • Engine revision 5a2a6a42cc
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>    • Dart version 3.12.2
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a>    • DevTools version 2.57.0
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>    • Feature flags: enable-web, enable-linux-desktop, enable-macos-desktop, enable-windows-desktop,
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a>      enable-android, enable-ios, cli-animations, enable-native-assets, enable-swift-package-manager,
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a>      omit-legacy-version-file, enable-lldb-debugging, enable-uiscene-migration
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a>[√] Windows Version (Windows 11 or higher, 25H2, 2009) [895ms]
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a>[√] Android toolchain - develop for Android devices (Android SDK version 37.0.0) [1 793ms]
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a>    • Android SDK at C:\Users\serge\AppData\Local\Android\sdk
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a>    • Emulator version 37.1.11.0 (build_id 15917651) (CL:N/A)
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a>    • Platform android-37.0, build-tools 37.0.0
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a>    • Java binary at: C:\Program Files\Android\Android Studio\jbr\bin\java
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a>      This is the JDK bundled with the latest Android Studio installation on this machine.
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a>      To manually set the JDK path, use: `flutter config --jdk-dir="path/to/jdk"`.
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a>    • Java version OpenJDK Runtime Environment (build 25.0.3+-15898627-b508.16)
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a>    • All Android licenses accepted.
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a>[√] Chrome - develop for the web [114ms]
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a>    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a>
+<a id="__codelineno-3-28" name="__codelineno-3-28"></a>[√] Visual Studio - develop Windows apps (Visual Studio Build Tools 2026 18.9.0) [113ms]
+<a id="__codelineno-3-29" name="__codelineno-3-29"></a>    • Visual Studio at C:\Program Files (x86)\Microsoft Visual Studio\18\BuildTools
+<a id="__codelineno-3-30" name="__codelineno-3-30"></a>    • Visual Studio Build Tools 2026 version 18.9.12105.275
+<a id="__codelineno-3-31" name="__codelineno-3-31"></a>    • Windows 10 SDK version 10.0.26100.0
+<a id="__codelineno-3-32" name="__codelineno-3-32"></a>
+<a id="__codelineno-3-33" name="__codelineno-3-33"></a>[√] Connected device (3 available) [216ms]
+<a id="__codelineno-3-34" name="__codelineno-3-34"></a>    • Windows (desktop) • windows • windows-x64    • Microsoft Windows [version 10.0.26200.9457]
+<a id="__codelineno-3-35" name="__codelineno-3-35"></a>    • Chrome (web)      • chrome  • web-javascript • Google Chrome 151.0.7922.174
+<a id="__codelineno-3-36" name="__codelineno-3-36"></a>    • Edge (web)        • edge    • web-javascript • Microsoft Edge 153.0.4234.48
+<a id="__codelineno-3-37" name="__codelineno-3-37"></a>
+<a id="__codelineno-3-38" name="__codelineno-3-38"></a>[√] Network resources [274ms]
+<a id="__codelineno-3-39" name="__codelineno-3-39"></a>    • All expected network resources are available.
+<a id="__codelineno-3-40" name="__codelineno-3-40"></a>
+<a id="__codelineno-3-41" name="__codelineno-3-41"></a>• No issues found!
+</code></pre></div></td></tr></table></div>
+<p>Sie können die Flutter-Anwendung nun auch dann starten, wenn der Webdienst, mit dem sie kommunizieren muss, nicht gestartet wurde. Listen Sie zunächst die von Flutter erkannten Geräte (devices) auf:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span>
+<span class="normal"><a href="#__codelineno-4-6">6</a></span>
+<span class="normal"><a href="#__codelineno-4-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>PS C:\Data\st-2026\dev\flutter-nestjs-sept-2026\rdvmedecins_flutter_client&gt; flutter devices                 
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>Found 4 connected devices:
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>sdk gphone16k x86 64 (mobile) • emulator-5554 • android-x64    • Android 17 (API 37) (emulator)
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>Windows (desktop)             • windows       • windows-x64    • Microsoft Windows [version
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>10.0.26200.9457]
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>Chrome (web)                  • chrome        • web-javascript • Google Chrome 153.0.8010.48
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>Edge (web)                    • edge          • web-javascript • Microsoft Edge 153.0.4234.48
+</code></pre></div></td></tr></table></div>
+<p>In Spalte 2 finden Sie die Kennungen der erkannten Geräte. So starten Sie die Flutter-Anwendung auf einem davon:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>flutter run -d &lt;device_id&gt;
+</code></pre></div>
+<p>Um die Anwendung beispielsweise im Browser Chrome mit der Kennung (chrome) zu starten:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>flutter run -d chrome
+</code></pre></div>
+<p>Dies führt zu folgendem Ergebnis (oder zu einem Fehler bei der Serververbindung):</p>
+<p><img src="images/10000000000005AB00000494BBB3472A.png" width="435" height="351" style="width:11.52cm;height:9.299cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005AB00000494BBB3472A.png" /></p>
+<p>Möglicherweise haben Sie das von Flutter benötigte Android SDK noch nicht installiert. Wir beschreiben nun, wie es installiert wird.</p>
+<p><span id="android-studio-et-les-outils-de-ligne-de-commande-android" name="android-studio-et-les-outils-de-ligne-de-commande-android" class="odt-bookmark-anchor"></span></p>
+<h3 id="212-android-studio-und-android-befehlszeilenwerkzeuge">2.1.2. <span style="color: #1f4d78">Android Studio und Android-Befehlszeilenwerkzeuge</span></h3>
+<p>Das mobile Ziel dieses Kurses ist ein <em>[Android]</em>-Smartphone. Um die Anwendung zu kompilieren und auf diesem Smartphone zu installieren, <em>benötigt [Flutter] das [Android]-SDK, das</em> zusammen mit <em>[Android Studio]</em>, der Entwicklungsumgebung von Google, installiert wird. <em>[Android Studio]</em> dient nicht zum Schreiben von Code – der Editor bleibt <em>[VSCode]</em> –, sondern wird hier nur verwendet, um das [Android]-SDK zu installieren und zu aktualisieren.</p>
+<ol>
+  <li><i><b>[Android Studio]</b></i>: Laden Sie es kostenlos von [https://developer.android.com/studio] herunter und installieren Sie es. Beim ersten Start bietet der Assistent eine Standardinstallation an: Akzeptieren Sie sie, dann lädt er das [Android]-SDK herunter.
+  </li>
+</ol>
+
+<p><img src="images/100000000000061F000004EF3DA687E7.png" width="470" height="379" style="width:12.441cm;height:10.021cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000061F000004EF3DA687E7.png" /></p>
+<ol>
+  <li>Öffnen Sie den <i><b>[SDK Manager] </b></i>in <i>[Android Studio] </i>(über das Menü <i>[Tools / SDK Manager]</i>, wenn ein Projekt geöffnet ist, oder über <i>[More Actions / SDK Manager] </i>auf dem Startbildschirm): Dies ist das Werkzeug, das die Komponenten des [Android]-SDK installiert und aktualisiert.
+  </li>
+  <li><i>Registerkarte [SDK Platforms]</i>: Prüfen Sie, ob eine aktuelle <i>[Android]</i>-Plattform installiert ist (die Dokumentation von <i>[Flutter]</i> nennt zum Zeitpunkt der Erstellung Version 36).
+  </li>
+</ol>
+
+<p><img src="images/10000000000005D80000038F60765B8C.png" width="449" height="273" style="width:11.869cm;height:7.23cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005D80000038F60765B8C.png" /></p>
+<ol>
+  <li><i>Registerkarte [SDK Tools]</i>: Aktivieren Sie <i><b>[Android SDK Command-line Tools (latest)]</b></i>, <i>[Android SDK Build-Tools]</i> und <i>[Android SDK Platform-Tools] </i>(sowie <i>[Android Emulator] </i>, wenn Sie auf einem Emulator testen möchten) und klicken Sie dann auf <i>[Apply]</i>. Die Dokumentation von <i>[Flutter] </i>empfiehlt außerdem <i>[CMake] </i>und <i>[NDK (Side by side)]</i>. Es sind die Pakete <i>[Android SDK Command-line Tools], </i>die fehlen, wenn <i>[flutter doctor] </i>„cmdline-tools component is missing“ anzeigt.
+  </li>
+  <li>Akzeptieren Sie die Lizenzen für das [Android]-SDK<i> </i>, indem Sie den folgenden Befehl in einem Terminal innerhalb des Flutter-Projekts eingeben und dann jede Frage mit <i>„[y]“ </i>beantworten, bis die Meldung „All SDK package licenses accepted.“ erscheint:
+
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-3" name="__codelineno-7-3"></a>flutter doctor --android-licenses
+</code></pre></div></td></tr></table></div>
+
+  </li>
+</ol>
+
+<p><strong><em>[Note]</em></strong>: Mit Version 23.0 der <em>[Android SDK Command-line Tools]</em> kann der obige Befehl sofort und ohne Rückfrage beendet werden und die Meldung „The --licenses option is no longer needed.“ ausgeben. Dies ist ein bekanntes Problem in <em>[Flutter]</em> (Issues 191558 und 191487 auf github.com/flutter/flutter). Abhilfe: Aktivieren Sie im <em>[SDK Manager]</em> auf der Registerkarte <em>[SDK Tools]</em> die Option <em>[Show Package Details]</em>, ersetzen Sie Version 23.0 der <em>[Android SDK Command-line Tools]</em> durch Version 22.0, klicken Sie auf <em>[Apply],</em> und führen Sie den Befehl dann erneut aus.</p>
+<p><span id="tester-sur-un-emulateur-android" name="tester-sur-un-emulateur-android" class="odt-bookmark-anchor"></span></p>
+<h3 id="213-einen-android-emulator-erstellen">2.1.3. <span style="color: #4f81bd">Einen Android-Emulator erstellen</span></h3>
+<p>Wenn Sie kein Smartphone besitzen, können Sie die Anwendung auf einem <em>[Android]</em>-Emulator testen: einem virtuellen Smartphone, das in einem Fenster auf Ihrem Computer läuft. <em>[Android Studio]</em> installiert das Programm <em>[Android Emulator]</em> (sofern es im <em>[SDK Manager]</em> aktiviert war, siehe oben), stellt aber kein einsatzbereites virtuelles Gerät bereit: Sie müssen eines erstellen.</p>
+<ol>
+  <li><i><b>[Prerequisite]</b></i>: Im <i>[BIOS]</i> des Computers muss die Virtualisierung aktiviert sein, und unter <i>[Windows]</i> muss das Feature <i>[Windows Hypervisor Platform]</i> aktiviert sein (<i>[Control Panel / Programs / Turn Windows features on or off]</i>); dazu ist ein Neustart erforderlich. Andernfalls startet der Emulator nicht oder bleibt sehr langsam.
+  </li>
+  <li>Öffnen Sie den <i><b>[Device Manager] </b></i>in <i>[Android Studio]</i>: <i>[More Actions / Virtual Device Manager] </i>auf dem Startbildschirm oder <i>[Tools / Device Manager] </i>bei geöffnetem Projekt (je nach Version: <i>[View / Tool Windows / Device Manager]</i>).
+  </li>
+</ol>
+
+<p><img src="images/10000000000003980000036506662E07.png" width="276" height="261" style="width:7.301cm;height:6.9cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003980000036506662E07.png" /></p>
+<ol>
+  <li>Klicken Sie auf <i>[Create Device]</i>, wählen Sie eine Vorlage aus (zum Beispiel <i>[Pixel 8]</i>) und dann <i>[Next]</i>. Wählen Sie ein aktuelles <i>[Android]</i>-Systemabbild für den Prozessor <i>[x86_64]</i> aus und laden Sie es über den Link <i>[Download]</i> daneben herunter, dann <i>[Next] </i>und <i>[Finish]</i>.
+  </li>
+</ol>
+
+<p><img src="images/100000000000046D00000328B20C690A.png" width="340" height="242" style="width:8.991cm;height:6.41cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000046D00000328B20C690A.png" /></p>
+<p><img src="images/1000000000000584000001DFE5F7CD5D.png" width="424" height="144" style="width:11.21cm;height:3.799cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000584000001DFE5F7CD5D.png" /></p>
+<p><img src="images/10000000000006F50000055B37D51A84.png" width="534" height="411" style="width:14.139cm;height:10.88cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006F50000055B37D51A84.png" /></p>
+<ol>
+  <li>Starten Sie den Emulator mit der Schaltfläche <i>[Play]</i> im <i>[Device Manager]</i> oder über ein Terminal (der erste Befehl listet die Emulatoren und ihre Kennungen auf):
+
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>flutter emulators
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>flutter emulators --launch &lt;id&gt;
+</code></pre></div></td></tr></table></div>
+
+  </li>
+</ol>
+
+<p><img src="images/10000000000004250000011F4B23E279.png" width="318" height="86" style="width:8.421cm;height:2.281cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004250000011F4B23E279.png" /></p>
+<ol start="3">
+  <li>Warten Sie, bis der <i>[Android]</i>-Begrüßungsbildschirm im Emulatorfenster erscheint: Der erste Start kann mehrere Minuten dauern. Prüfen Sie dann, ob <i>[Flutter] </i>den Emulator erkennt, der in der Liste erscheinen sollte (zum Beispiel <i>[emulator-5554]</i>, Plattform <i>[android-x64]</i>):
+  </li>
+</ol>
+
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>flutter devices
+</code></pre></div>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span>
+<span class="normal"><a href="#__codelineno-10-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>PS C:\Data\st-2026\dev\flutter-nestjs-sept-2026\rdvmedecins_flutter_client&gt; flutter devices
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>Found 4 connected devices:
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>  sdk gphone16k x86 64 (mobile) • emulator-5554 • android-x64    • Android 17 (API 37) (emulator)
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a>  Windows (desktop)             • windows       • windows-x64    • Microsoft Windows [version
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a>  10.0.26200.9457]
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a>  Chrome (web)                  • chrome        • web-javascript • Google Chrome 153.0.8010.48
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a>  Edge (web)                    • edge          • web-javascript • Microsoft Edge 153.0.4234.48
+</code></pre></div></td></tr></table></div>
+<p><strong><em>[Note]</em></strong>: Wenn <em>[flutter devices]</em> den Emulator nicht anzeigt, sondern die Meldung „Device emulator-5554 is offline“ ausgibt, ist der Emulator noch nicht vollständig gestartet, oder <em>[adb]</em> (das Werkzeug, das den Computer mit dem Gerät verbindet und zusammen mit den <em>[Android SDK Platform-Tools]</em> installiert wird) befindet sich in einem inkonsistenten Zustand. Versuchen Sie der Reihe nach Folgendes: (1) Warten Sie, bis der Begrüßungsbildschirm erscheint, und führen Sie den Befehl dann erneut aus; (2) starten Sie <em>[adb]</em> mit den folgenden drei Befehlen neu (unter <em>[Windows]</em> in <em>[PowerShell]</em>), wobei der letzte „device“ statt „offline“ anzeigen sollte; (3) wählen Sie im <em>[Device Manager]</em> im Menü <em>[⋮]</em> des Geräts <em>[Cold Boot Now]</em> oder als letztes Mittel sogar <em>[Wipe Data]</em>.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>&amp; "$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe" kill-server
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>&amp; "$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe" start-server
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a>&amp; "$env:LOCALAPPDATA\Android\Sdk\platform-tools\adb.exe" devices
+</code></pre></div></td></tr></table></div>
+<p>Wenn das Problem weiterhin besteht, prüfen Sie mit <em>[where.exe adb]</em>, dass sich kein anderes <em>[adb]</em> in einer anderen Version im <em>[PATH]</em> befindet: Zwei Versionen von <em>[adb]</em> , die um die Verbindung konkurrieren, verursachen dieses Problem.</p>
+<p>Sobald der Emulator erkannt wird, starten Sie die Anwendung mit dem folgenden Befehl darauf. Achtung: Im Emulator bezeichnet <em>[localhost]</em> den Emulator selbst und nicht den Computer; das Feld „Server-URL“ muss <em>[http://10.0.2.2:8080]</em> enthalten (siehe Kapitel 5).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>flutter run -d emulator-5554
+</code></pre></div>
+<p><img src="images/100000000000036900000506BCBC0E04.png" width="262" height="386" style="width:6.93cm;height:10.209cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000036900000506BCBC0E04.png" /></p>
+<p><span id="preparer-le-telephone-android" name="preparer-le-telephone-android" class="odt-bookmark-anchor"></span></p>
+<h3 id="214-das-android-smartphone-vorbereiten">2.1.4. <span style="color: #1f4d78">Das Android-Smartphone vorbereiten</span></h3>
+<p>Um die Anwendung auf einem echten <em>[Android]</em>-Smartphone auszuführen, muss das Smartphone so eingestellt sein, dass es sich vom Computer aus steuern lässt:</p>
+<ol>
+  <li>Aktivieren Sie die Entwickleroptionen: Öffnen Sie <i>[Settings / About phone]</i> und tippen Sie dann mehrmals (in der Regel 7-mal) auf <i>[Build number]</i>, bis das Smartphone anzeigt, dass Sie Entwickler sind. Die genauen Bezeichnungen variieren je nach Hersteller.
+  </li>
+  <li>Aktivieren Sie <i>[USB debugging] </i>im Menü <i>[Developer options] </i>(im vorherigen Schritt hinzugefügt).
+  </li>
+  <li>Verbinden Sie das Smartphone über ein USB-Kabel mit dem Computer, das Daten überträgt (und nicht nur das Smartphone lädt), und akzeptieren Sie auf dem Smartphone die Anfrage zur Berechtigung für das USB-Debugging. Falls das Smartphone unter Windows nicht erkannt wird, installieren Sie den USB-Treiber des Herstellers („OEM USB drivers“, siehe [https://developer.android.com/studio/run/oem-usb]).
+  </li>
+  <li>Prüfen Sie, ob <i>[Flutter] </i>das Smartphone erkennt: Es sollte in der Liste erscheinen, die der folgende Befehl ausgibt, zusammen mit der Plattform <i>[android]</i>:
+
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-4" name="__codelineno-13-4"></a>flutter devices
+</code></pre></div></td></tr></table></div>
+
+  </li>
+</ol>
+
+<p>Das Smartphone greift auf den <em>[NestJS]</em>-Server über die IP-Adresse des Computers im lokalen Netzwerk zu (und nicht über <em>[localhost]</em>): Diese Konfiguration wird in Kapitel 5 beschrieben.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Dieses Tutorial, geschrieben von der KI <strong>Claude</strong> von Anthropic im Auftrag von <strong>Serge Tahé</strong>, wird der Öffentlichkeit unter den Bedingungen der Lizenz
+        <em>Creative Commons Namensnennung – Nicht kommerziell –
+        Weitergabe unter gleichen Bedingungen 3.0 Unported</em> zur Verfügung gestellt.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
